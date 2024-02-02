@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "extended_ft.h"
 
 static int	ft_isspace(char c)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "extended_ft.h"
 
 void	*ft_realloc(void *in, size_t oldsize, size_t newsize)
 {
