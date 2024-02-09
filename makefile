@@ -6,7 +6,7 @@
 #    By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 15:13:08 by hlibine           #+#    #+#              #
-#    Updated: 2024/02/02 16:36:54 by hlibine          ###   ########.fr        #
+#    Updated: 2024/02/09 15:01:35 by hlibine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,8 @@ FILES = srcs/ft_atoi \
 			srcs/ft_tolower \
 			srcs/ft_toupper \
 			srcs/ft_realloc \
+			srcs/garbage_collecter \
+			srcs/gargabe_collector_utils.c \
 
 BONUS = srcs/ft_lstnew \
 			srcs/ft_lstadd_front \
