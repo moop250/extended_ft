@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:30:51 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/09 15:03:13 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:19:19 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	gfree(void *address)
 	t_garbcol	*todel;
 
 	collector = getgarbage();
-	todel	= *collector;
+	todel = *collector;
 	while (todel && todel->content != address)
 		todel = todel->next;
 	if (!todel)
@@ -37,20 +37,20 @@ void	gfree(void *address)
 			todel->previous->next = todel->next;
 		else
 			*collector = todel->next;
-		if(todel->next)
+		if (todel->next)
 			todel->next->previous = todel->previous;
 		free(todel->content);
 		free(todel);
 	}
 }
 
-void *addgarbage(void *address)
+void	*addgarbage(void *address)
 {
 	t_garbcol	**collector;
 	t_garbcol	*tmp;
 	t_garbcol	*last;
 
-	if(!address)
+	if (!address)
 		return (0);
 	collector = getgarbage();
 	tmp = (t_garbcol *)malloc(sizeof(t_garbcol));
@@ -70,7 +70,6 @@ void *addgarbage(void *address)
 		*collector = tmp;
 	return (tmp->content);
 }
-
 
 //graciously stolen from https://github.com/RPDJF/
 void	*galloc(size_t size)
