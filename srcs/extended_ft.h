@@ -72,6 +72,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void*));
 void		*ft_realloc(void *in, size_t oldsize, size_t newsize);
+void		ft_3dfree(void ***array);
 void		*galloc(size_t size);
 t_garbcol	*lastgarbage(t_garbcol *garb);
 void		razegarbage(void);
