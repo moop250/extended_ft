@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:51:48 by hlibine           #+#    #+#             */
-/*   Updated: 2023/11/03 15:33:24 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:33:01 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	a = 0;
-	out = malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
+	out = galloc((ft_wordcount(s, c) + 1) * sizeof(char *));
 	if (!out)
 		return (NULL);
 	while (s[a])
