@@ -38,10 +38,11 @@ Example usage of extended_ft:
 
 int  main(void)
 {
-    char *split;
+    char **split;
 
     split = ft_split("test string");
-    ft_putendl_fd(split, 1);
+    while (*split)
+        ft_putendl_fd(*split++, 1);
     return (1);
 }
 ```
