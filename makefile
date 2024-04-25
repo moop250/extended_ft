@@ -6,7 +6,7 @@
 #    By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 15:13:08 by hlibine           #+#    #+#              #
-#    Updated: 2024/02/29 15:31:08 by hlibine          ###   ########.fr        #
+#    Updated: 2024/04/25 15:07:24 by hlibine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ FILES = srcs/ft_atoi \
 			srcs/ft_realloc \
 			srcs/ft_3dfree \
 			srcs/garbage_collecter \
-			srcs/gargabe_collector_utils \
+			srcs/garbage_collector_utils \
 			srcs/ft_lstnew \
 			srcs/ft_lstadd_front \
 			srcs/ft_lstsize \
