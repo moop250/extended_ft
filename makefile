@@ -6,7 +6,7 @@
 #    By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 15:13:08 by hlibine           #+#    #+#              #
-#    Updated: 2024/04/25 15:07:24 by hlibine          ###   ########.fr        #
+#    Updated: 2024/04/25 17:25:13 by hlibine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,19 +74,24 @@ SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+.c.o:
+	@printf "\033[0;32mCompiling $<...\033[0m\r"
+	@$(CC) $(CFLAGS) -c -o $@ $<
+	@printf "\033[K"
 
 $(NAME): $(OBJS)
-	$(AR) $@ $^
-	
+	@$(AR) $@ $^
+	@echo "\033[0;32mextended_ft compiled\033[0m"
 
 all: $(NAME)
+
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+	@echo "\033[0;32mextended_ft cleaned\033[0m"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "\033[0;32mextended_ft fully cleaned\033[0m"
 
 re: fclean all
 
