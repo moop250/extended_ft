@@ -9,6 +9,8 @@ extended_ft is a personal project that im doing alongside 42 that involves expan
 - A larger set of functions that is not covered in the original libft.
 - Increase in performance and efficiency compared to the original libft.
 - Garbage Collector: Incorporates a garbage collector to automate memory management and prevent memory leaks.
+- getnextline: A function for reading from fd's such as files and the stdin & stdout.
+- ft_printf_fd: A modified version of my [ft_printf](https://github.com/moop250/ft_printf) project which allows you to chose which fd you want to print to.
 
 ## Compatibility & Size
 
