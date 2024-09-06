@@ -6,11 +6,11 @@
 #    By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 15:13:08 by hlibine           #+#    #+#              #
-#    Updated: 2024/05/20 15:18:29 by hlibine          ###   ########.fr        #
+#    Updated: 2024/07/17 17:12:37 by hlibine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -D GARBAGE_COLLECTER=1 
+CFLAGS = -D GARBAGE_COLLECTER=0
 
 NAME = libft.a
 
@@ -56,6 +56,7 @@ FILES = srcs/ft_atoi \
 			srcs/ft_toupper \
 			srcs/ft_realloc \
 			srcs/ft_3dfree \
+			srcs/ft_2dfree \
 			srcs/garbage_collecter \
 			srcs/garbage_collector_utils \
 			srcs/ft_lstnew \
@@ -66,10 +67,10 @@ FILES = srcs/ft_atoi \
 			srcs/ft_lstdelone \
 			srcs/ft_lstclear \
 			srcs/ft_lstiter \
-			srcs/ft_lstmap \
 			srcs/get_next_line/get_next_line \
 			srcs/ft_printf/ft_printf_utils \
- 			srcs/ft_printf/ft_printf \
+			srcs/ft_printf/ft_printf \
+			srcs/ft_isnumeric \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

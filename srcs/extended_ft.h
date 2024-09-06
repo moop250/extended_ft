@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:13:53 by hlibine           #+#    #+#             */
-/*   Updated: 2024/05/20 15:23:47 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:24:16 by hlibine          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 // extended_ft settings
 # ifndef GARBAGE_COLLECTOR
-#	define GARBAGE_COLLECTOR 1
+#  define GARBAGE_COLLECTOR 0
 # endif
 
 // Structs
@@ -36,7 +36,6 @@ typedef struct s_garbcol
 	struct s_garbcol	*next;
 	struct s_garbcol	*previous;
 }	t_garbcol;
-
 
 // Functions
 int			ft_isalnum(int c);
@@ -78,12 +77,12 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
-void		ft_lstclear(t_list **lst, void (*del)(void *));
+void		ft_lstdelone(t_list *lst);
+void		ft_lstclear(t_list **lst);
 void		ft_lstiter(t_list *lst, void (*f)(void *));
-t_list		*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void*));
 void		*ft_realloc(void *in, size_t oldsize, size_t newsize);
 void		ft_3dfree(void ***array);
+void		ft_2dfree(void **in);
 void		*galloc(size_t size);
 void		razegarbage(void);
 t_garbcol	**getgarbage(void);
@@ -92,5 +91,6 @@ void		gfree(void *address);
 char		*get_next_line(int fd);
 int			ft_strcmp(const char *str1, const char *str2);
 int			ft_printf_fd(int fd, const char *format, ...);
+int			ft_isnumeric(const char *str);
 
 #endif

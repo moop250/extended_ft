@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_2dfree.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pberset <pberset@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:59:48 by hlibine           #+#    #+#             */
-/*   Updated: 2024/07/03 20:14:19 by hlibine          ###   ########.fr       */
+/*   Created: 2024/07/17 16:50:05 by hlibine           #+#    #+#             */
+/*   Updated: 2024/07/26 10:02:01 by pberset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "extended_ft.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_2dfree(void **in)
 {
-	t_list	*temp;
+	int	i;
 
-	if (!lst)
+	if (!in)
 		return ;
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-	return ;
+	i = -1;
+	while (in[++i])
+		gfree(in[i]);
+	gfree(in);
 }

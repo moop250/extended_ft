@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:30:51 by hlibine           #+#    #+#             */
-/*   Updated: 2024/05/20 15:23:33 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:23:12 by hlibine          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	*addgarbage(void *address)
 
 	if (!address)
 		return (0);
+	if (!GARBAGE_COLLECTOR)
+		return (address);
 	collector = getgarbage();
 	tmp = (t_garbcol *)malloc(sizeof(t_garbcol));
 	if (!tmp)

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:03:28 by hlibine           #+#    #+#             */
-/*   Updated: 2023/11/03 15:32:56 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/06/18 14:30:09 by hlibine          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	if (!dst && !src && n > 0)
-		return (NULL);
-	i = 0;
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (i < n)
+	if (!dst && !src)
 	{
-		d[i] = s[i];
-		i++;
+		if (n > 0)
+			return (NULL);
+		return (dst);
 	}
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	while (n--)
+		*d++ = *s++;
 	return (dst);
 }

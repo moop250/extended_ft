@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pberset <pberset@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:59:48 by hlibine           #+#    #+#             */
-/*   Updated: 2024/07/03 20:14:19 by hlibine          ###   ########.fr       */
+/*   Created: 2024/07/17 15:33:27 by hlibine           #+#    #+#             */
+/*   Updated: 2024/07/26 10:02:09 by pberset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "extended_ft.h"
 
-void	ft_lstclear(t_list **lst)
+/*
+Takes a string as input
+Returns a 1 if the entire string is comprised of digits
+Returns a 0 if the string contains non numeric characters
+ */
+int	ft_isnumeric(const char *str)
 {
-	t_list	*temp;
-
-	if (!lst)
-		return ;
-	while (*lst)
+	if (!str)
+		return (0);
+	while (*str)
 	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst);
-		*lst = temp;
+		if (!ft_isdigit(*str))
+			return (0);
+		++str;
 	}
-	*lst = NULL;
-	return ;
+	return (1);
 }
